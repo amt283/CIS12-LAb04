@@ -2,7 +2,7 @@
 
 <b> Reflection </b>
 
-<i>"Reflect on how encapsulation and generalization helped us break down the drawing process for this scene."
+<i>"Reflect on how encapsulation and generalization helped us break down the drawing process for this scene."</i>
 
 Encapsulation was used to reduce repetitive code and make it easier to reuse while improving the code's readability. 
 For instance, we created the "draw_jack()" function which was used to draw the Jack'o'lanterns. We technically didn't 
