@@ -118,9 +118,9 @@ t.clear()
 t.color("#F05E16") # Dark orange line color, for Halloween!
 
 # Draw three jack-o-lanterns
-draw_jack(t, -150, -150, 100)
-draw_jack(t, 0, -150, 80)
-draw_jack(t, 150, -150, 100)
+draw_jack(t, -165, -290, 100)
+draw_jack(t, 0, -290, 80)
+draw_jack(t, 165, -290, 100)
 
 # # Draw the night sky
 draw_sky(t, 30)
