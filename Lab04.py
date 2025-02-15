@@ -35,6 +35,7 @@ def draw_pumpkin(t, x, y, radius):
     t.end_fill()
 
     # Drawing the stem
+    # y has "radius // 10" subtracted to lower stem to a more natural looking spot
     jump(t, x+(radius // 10), y+2*radius-(radius // 10))
     t.fillcolor("green")
     t.begin_fill()
@@ -50,9 +51,7 @@ def draw_pumpkin(t, x, y, radius):
 
 def draw_eye(t, x, y, size):
     """Draws one triangular eye at the given (x, y) position."""
-    t.penup()
-    t.goto(x, y)
-    t.pendown()
+    jump(t, x, y)
     t.fillcolor("yellow")
     t.begin_fill()
     draw_polygon(t, 3, size)
@@ -63,6 +62,7 @@ def draw_mouth(t, x, y, width):
     jump(t, x, y)
     t.fillcolor("yellow")
     t.begin_fill()
+    t.right(63)
     for _ in range(5):  # Create a simple zigzag mouth
         t.forward(width // 5)
         t.left(120)
@@ -72,9 +72,7 @@ def draw_mouth(t, x, y, width):
 
 def draw_star(t, x, y, size):
     """Draws a star at the given (x, y) position."""
-    t.penup()
-    t.goto(x, y)
-    t.pendown()
+    jump(t, x, y)
     t.fillcolor("white")
     t.begin_fill()
     for _ in range(5):
@@ -100,13 +98,14 @@ t.hideturtle()
 # Create a window to draw in
 # Create a new turtle screen and set its background color
 screen = turtle.Screen()
-screen.bgcolor("#b33000") # Dark orange bg color - for Halloween!
+screen.bgcolor("darkblue")
 # Set the width and height of the screen
 screen.setup(width=600, height=600)
 # Clear the screen
 t.clear()
 
 """PUT YOUR DRAW CALLS TO FUNCTIONS HERE"""
+t.color("#F05E16") # Dark orange line color, for Halloween!
 # draw_pumpkin(t, 0, -100, 100)  # Draw the pumpkin
 # draw_eye(t, -40, 0, 30)  # Left eye
 # draw_eye(t, 40, 0, 30)   # Right eye
