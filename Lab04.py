@@ -35,7 +35,7 @@ def draw_pumpkin(t, x, y, radius):
     t.end_fill()
 
     # Drawing the stem
-    jump(t, x+10, radius)
+    jump(t, x+(radius // 10), y+2*radius-(radius // 10))
     t.fillcolor("green")
     t.begin_fill()
     t.left(90)  # Point upwards
@@ -112,6 +112,7 @@ t.clear()
 # draw_eye(t, 40, 0, 30)   # Right eye
 # draw_mouth(t, -50, -50, 100)  # Mouth
 # draw_sky(t, 20)  # Draw 20 stars
+
 # Draw three jack-o-lanterns
 draw_pumpkin(t, -150, -150, 100)
 draw_eye(t, -190, -60, 30)  # Left eye
@@ -127,8 +128,8 @@ draw_pumpkin(t, 150, -150, 100)
 draw_eye(t, 110, -60, 30)
 draw_eye(t, 190, -60, 30)
 draw_mouth(t, 110, -100, 80)
-
-# Draw the night sky
+#
+# # Draw the night sky
 draw_sky(t, 30)
 
 # Close the turtle graphics window when clicked
