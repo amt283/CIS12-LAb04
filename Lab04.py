@@ -62,12 +62,13 @@ def draw_mouth(t, x, y, width):
     jump(t, x, y)
     t.fillcolor("yellow")
     t.begin_fill()
-    t.right(63)
+    t.right(60)
     for _ in range(5):  # Create a simple zigzag mouth
         t.forward(width // 5)
         t.left(120)
         t.forward(width // 5)
         t.right(120)
+    t.left(60)
     t.end_fill()
 
 def draw_star(t, x, y, size):
@@ -88,6 +89,15 @@ def draw_sky(t, num_stars):
         size = random.randint(10, 30)
         draw_star(t, x, y, size)
 
+def draw_jack(t, x, y, radius):
+    draw_pumpkin(t, x, y, radius)
+    eye_height = y+((1/2)*(2*radius))
+    eye_size = (.3)*radius
+    mouth_height = eye_height - (1/2)*radius
+    draw_eye(t, x-((1/2)*radius), eye_height, eye_size)
+    draw_eye(t, x+((1/4)*radius), eye_height, eye_size)
+    draw_mouth(t, x-((.45)*radius), mouth_height, radius)  # Mouth
+
 # Create a turtle object
 t = turtle.Turtle()
 
@@ -106,28 +116,12 @@ t.clear()
 
 """PUT YOUR DRAW CALLS TO FUNCTIONS HERE"""
 t.color("#F05E16") # Dark orange line color, for Halloween!
-# draw_pumpkin(t, 0, -100, 100)  # Draw the pumpkin
-# draw_eye(t, -40, 0, 30)  # Left eye
-# draw_eye(t, 40, 0, 30)   # Right eye
-# draw_mouth(t, -50, -50, 100)  # Mouth
-# draw_sky(t, 20)  # Draw 20 stars
 
 # Draw three jack-o-lanterns
-draw_pumpkin(t, -150, -150, 100)
-draw_eye(t, -190, -60, 30)  # Left eye
-draw_eye(t, -110, -60, 30)  # Right eye
-draw_mouth(t, -190, -100, 80)  # Mouth
+draw_jack(t, -150, -150, 100)
+draw_jack(t, 0, -150, 80)
+draw_jack(t, 150, -150, 100)
 
-draw_pumpkin(t, 0, -150, 80)
-draw_eye(t, -20, -70, 25)
-draw_eye(t, 20, -70, 25)
-draw_mouth(t, -30, -110, 60)
-
-draw_pumpkin(t, 150, -150, 100)
-draw_eye(t, 110, -60, 30)
-draw_eye(t, 190, -60, 30)
-draw_mouth(t, 110, -100, 80)
-#
 # # Draw the night sky
 draw_sky(t, 30)
 
